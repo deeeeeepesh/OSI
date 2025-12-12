@@ -38,7 +38,7 @@ semantic_model:
     # Optional: Additional context for AI tools (e.g., custom prompts, instructions)
     ai_context: string
 
-    # Required: Collection of logical datasets(fact and dimension tables)
+    # Required: Collection of logical datasets (fact and dimension tables)
     # See Logical Dataset section below for detailed structure
     datasets: []
 
