@@ -73,7 +73,10 @@ datasets:
     # Can be a single column or a composite of multiple columns
     # This is the preferred unique identifier for this dataset and is used in relationships to determine many-to-one or one-to-one.
     # Examples:
+    # primary_key:
     #   - [customer_id]           # Simple primary key
+    #
+    # primary_key:
     #   - [order_id, line_number] # Composite primary key
     primary_key: []  # Array of column names (single or composite)
 
@@ -81,8 +84,13 @@ datasets:
     # Each unique key can be a single column or a composite of multiple columns
     # Used for determining relationship type of either many-to-one or one-to-one
     # Examples:
-    #   - [column1]              # Simple key on one column
-    #   - [column2, column3]     # Composite key on two columns
+    # unique_keys:
+    #   - [column1]
+    #   - [column2, column3]
+    #
+    # unique_keys:
+    #   - [column1, column2]      
+    #   - [column3, column4]     
     unique_keys:
       - []  # Array of column names (single or composite)
 
