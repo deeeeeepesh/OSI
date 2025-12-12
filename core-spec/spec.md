@@ -265,14 +265,13 @@ Quantitative measures defined on business data, representing key calculations li
 
 ### Expression Object
 
-The expression object supports two formats:
-
-**Option 1: Full SQL Expression**
+The expression object supports multiple dialects
 
 ```yaml
 expression:
+  dialects:
   - dialect: ANSI_SQL  # Default
-    expression: "SUM(sales) / COUNT(DISTINCT customer_id)"
+    expression: "SUM(order.sales) / COUNT(DISTINCT order.customer_id)"
 ```
 
 
@@ -284,8 +283,7 @@ expression:
 - name: total_revenue
   expression:
     - dialect: ANSI_SQL
-      aggregation_type: SUM
-      input_expr: order_amount
+      expression: SUM(orders.amount)
   description: Total revenue across all orders
   ai_context:
     synonyms:
@@ -433,9 +431,9 @@ semantic_model:
     metrics:
       - name: total_revenue
         expression:
-          - dialect: ANSI_SQL
-            aggregation_type: SUM
-            input_expr: orders.amount
+          dialects:
+            - dialect: ANSI_SQL
+              expression: SUM(orders.amount)
         description: Total revenue from all orders
         ai_context:
           synonyms:
@@ -444,9 +442,9 @@ semantic_model:
 
       - name: customer_count
         expression:
-          - dialect: ANSI_SQL
-            aggregation_type: COUNT_DISTINCT
-            input_expr: customers.id
+          dialects:
+            - dialect: ANSI_SQL
+              expression: COUNT(DISTINCT customers.id)
         description: Total number of customers
         ai_context:
           synonyms:
