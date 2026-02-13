@@ -1,10 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/osi-initiative/osi/core-spec/osi-schema.json",
+  "$id": "https://github.com/open-semantic-interchange/OSI/core-spec/osi-schema.json",
   "title": "OSI Core Metadata Specification",
   "description": "JSON Schema for validating OSI (Open Semantic Interoperability) semantic model definitions",
   "type": "object",
   "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "OSI specification version"
+    },
     "dialects": {
       "type": "array",
       "description": "Supported expression language dialects (enumeration definition)",
@@ -27,7 +32,7 @@
       }
     }
   },
-  "required": ["semantic_model"],
+  "required": ["version", "semantic_model"],
   "additionalProperties": false,
   "$defs": {
     "Dialect": {
