@@ -1,5 +1,5 @@
 # OSI - Core Metadata Spec (YAML Schema)
-# Version: 1.0
+version: 1.0
 # 
 # Goals:
 # - Standardization: Establish uniform language and structure for semantic model definitions
